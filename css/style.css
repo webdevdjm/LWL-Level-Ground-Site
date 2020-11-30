@@ -1,0 +1,426 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+/* Heading font stack */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap");
+
+/* Content font stack */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-primary {
+  display: inline-block;
+  width: 200px;
+  padding: 1em 2em;
+  color: #333;
+  border: 1px solid #979797;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: #66768a;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+header {
+  width: 100%;
+  background: transparent;
+}
+
+/* Style hamburger */
+nav i {
+  color: white;
+  font-size: 2rem;
+}
+
+.hero-content i {
+  font-size: 3em;
+  margin-right: 0.4em;
+}
+
+/* Turn cursor into pointer on hover */
+i:hover {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Oswald", sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/******************************************
+/* NAVIGATION BAR
+/*******************************************/
+/* Contain AND center the nav items - set max width appropriately */
+nav {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  /* Split nav into sections with CSS Grid */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+}
+
+/* Keep items in correct columns */
+.left-menu {
+  grid-column: 1;
+}
+.logo {
+  grid-column: 2;
+}
+.right-menu {
+  grid-column: 3;
+}
+
+/* Hide hamburger icon on larger screens */
+#nav-toggle,
+.burger-menu {
+  display: none;
+}
+
+/* Position menu items - spaces evenly both sides! */
+.left-menu a,
+.right-menu a {
+  padding: 10px 0;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Verticle center nav items */
+.left-menu,
+.right-menu,
+.logo {
+  align-self: center;
+}
+
+/* Horizontal alignment for nav items */
+.left-menu {
+  justify-self: start;
+}
+.right-menu {
+  justify-self: end;
+}
+
+/* Align hamburger icon */
+.burger-menu {
+  grid-column: 1;
+  align-self: center;
+}
+
+/* Style Donate button */
+.nav-btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: none;
+  color: #66768a;
+  padding: 0.8em;
+  text-align: center;
+  display: inline-block;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* MEDIA Q */
+@media only screen and (max-width: 800px) {
+  .burger-menu {
+    display: inline-block;
+    justify-self: left;
+  }
+
+  /* Hide nav links on mobile */
+  .left-menu,
+  .right-menu {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .burger-menu {
+    display: inline-block;
+  }
+
+  /* Place nav links */
+  #nav-toggle:checked ~ .left-menu {
+    display: grid;
+    grid-row: 2;
+  }
+  #nav-toggle:checked ~ .right-menu {
+    display: grid;
+    grid-row: 2;
+  }
+
+  /* Stack items on mobile */
+  ul li {
+    display: block;
+    padding: 0.5rem;
+  }
+
+  /* Right align mobile menu text on right menu */
+  .right-menu ul {
+    text-align: right;
+  }
+}
+
+/******************************************
+/* HERO
+/*******************************************/
+.hero {
+  background-color: #66768a;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.push-right {
+  margin-right: 2em;
+}
+
+.hero-content {
+  font-family: "Oswald", sans-serif;
+  padding: 4em 0;
+}
+
+.lead {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+.video-link {
+  margin: 2em 0;
+  display: flex;
+  justify-content: center;
+}
+
+.video-link a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.fa-play-circle {
+  vertical-align: middle;
+}
+
+/* HERO MEDIA Q */
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .lead {
+    font-size: 1rem;
+    width: 90%;
+  }
+}
+
+/******************************************
+/* WHY SECTION
+/*******************************************/
+
+.why {
+  text-align: center;
+  padding: 4em 0;
+}
+
+.why h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.why p {
+  width: 60%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* WHY MEDIA Q */
+@media only screen and (max-width: 800px) {
+  .why h2 {
+    font-size: 1.6rem;
+  }
+  .why p {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
+
+/******************************************
+/* VISIT SECTION
+/*******************************************/
+
+.visit {
+  background-color: #dbdfe2;
+}
+
+.visit .flex {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  gap: 4em;
+  padding: 4em;
+  margin: 0 auto;
+}
+
+.card p {
+  margin-bottom: 2em;
+}
+
+/* VISIT MEDIA Q */
+@media only screen and (max-width: 800px) {
+  .visit .flex {
+    flex-direction: column;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+/******************************************
+/* VOLUNTEER SECTION
+/*******************************************/
+
+.volunteer {
+  text-align: center;
+  padding: 4em 0;
+}
+
+.volunteer h2 {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+}
+
+.volunteer p {
+  width: 60%;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.volunteer button {
+  margin-top: 2em;
+}
+
+/* VOLUNTEER MEDIA Q */
+@media only screen and (max-width: 800px) {
+  .volunteer h2 {
+    font-size: 1.6rem;
+  }
+  .volunteer p {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+}
+
+/******************************************
+/* FOOTER
+/*******************************************/
+
+footer {
+  background: #161f2a;
+  color: #fff;
+  padding: 2em 0;
+}
+
+.footer-upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-lower {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social .fab {
+  margin-left: 0;
+  margin-right: 1em;
+}
+
+.site-map,
+.contribute {
+  text-transform: uppercase;
+  color: #66768a;
+  font-weight: bold;
+}
+
+.site-map p,
+.contribute p {
+  margin-bottom: 0;
+}
+
+.footer-left ul {
+  margin-top: 0.3em;
+}
+
+.site-map ul li a,
+.contribute ul li a {
+  text-transform: none;
+  margin-right: 1.4em;
+}
+
+h4 {
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.address {
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom-left p {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
