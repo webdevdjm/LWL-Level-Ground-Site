@@ -107,6 +107,10 @@ nav {
 .logo {
   grid-column: 2;
 }
+.logo img {
+  width: 50px;
+  height: auto;
+}
 .right-menu {
   grid-column: 3;
 }
