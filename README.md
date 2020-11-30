@@ -4,4 +4,5 @@
 
 ### Level Ground MMA Wireframe
 
-[Link to Live Website](https://lwl-level-ground-site.vercel.app/){:target="_blank"}
+<a href="https://lwl-level-ground-site.vercel.app/" target="_blank">Link to Live Website</a>
+
